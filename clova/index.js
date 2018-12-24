@@ -168,8 +168,8 @@ class CEKResponse {
 
 const clovaReq = function (httpReq, httpRes, next) {
   const signature = httpReq.headers.signaturecek
-  cekResponse = new CEKResponse()
-  cekRequest = new CEKRequest(httpReq)
+  var cekResponse = new CEKResponse()
+  var cekRequest = new CEKRequest(httpReq)
   if (!DEBUG) {
     try {
       verifier(signature, ExtensionId, JSON.stringify(httpReq.body))
